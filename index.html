@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuật Toán Tính a^k mod n</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .algorithm {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+  <header>
+
+  </header>
+  <main>
+    <section style="padding: 10px 0 10% 0;" class="GioiThieu">
+      <h1>Thuật toán a^k mod n</h1>
+      <p>Thuật toán 𝑎 <span>k</span> mod n được sử dụng để tính phần dư của phép chia a <span>k</span> (lũy thừa của a <span>k</span> với số mũ k) cho 𝑛. Đây là một bài toán thường gặp trong lý thuyết số và mật mã học.</p>
+      <p>Trong đó:</p>
+      <p>a: cơ số (base).</p>
+      <p>k: số mũ (exponent).</p>
+      <p>n: số chia (modulus).</p>
+    </section>
+
+    <section class="MucTieu">
+      <p><span>Tính lũy thừa hiệu quả: </span>Trực tiếp tính 𝑎 <span>𝑘</span> và sau đó lấy phần dư sẽ không khả thi khi 𝑘 rất lớn, vì giá trị của 𝑎 <span>𝑘</span> sẽ nhanh chóng trở nên rất lớn, gây ra vấn đề về hiệu suất và tràn số (overflow).</p>
+      <p><span>Giảm thời gian tính toán: </span>Thuật toán này sử dụng kỹ thuật "Lũy thừa nhanh" (Exponentiation by Squaring) để tính toán nhanh chóng và tiết kiệm bộ nhớ.</p>
+      <p><span>Ứng dụng thực tế: </span>Thuật toán này thường được sử dụng trong:</p>
+      <div>
+        <p><span>Mật mã học </span>(như RSA, Diffie-Hellman).</p>
+        <p><span>Blockchain </span>(chữ ký số).</p>
+        <p>Các bài toán số học trong lập trình.</p>
+      </div>
+    </section>
+
+    <section class="HoatDong">
+      <h1>Cách thức hoạt động</h1>
+      <div >
+        <h3>Ý tưởng chính</h3>
+        <p>Biểu diễn 𝑘 dưới dạng nhị phân để giảm số lần nhân.</p>
+        <p>Tính lũy thừa bằng cách bình phương 𝑎 và giảm 𝑘 một cách hiệu quả.</p>
+        <p>Kết hợp việc lấy phần dư ngay sau mỗi bước nhân để đảm bảo giá trị không bị quá lớn.</p>
+      </div>
+
+      <h4>Các bước</h4>
+      <div>
+        <h5>1. Khởi tạo giá trị ban đầu</h5>
+        <p>result = 1 (kết quả ban đầu).</p>
+        <p>base = 𝑎 mod 𝑛 (lấy phần dư của 𝑎 với 𝑛).</p>
+      </div>
+      <div>
+        <h5>2. Khi 𝑘 > 0:</h5>
+        <p>Nếu 𝑘 lẻ (𝑘 mod 2 = 1): result = (result × base) mod 𝑛.</p>
+        <p>Bình phương base:base = (base × base) mode 𝑛.</p>
+        <p>Chia 𝑘 cho 2: 𝑘 = 𝑘 / 2 (lấy phần nguyên).</p>
+      </div>
+      <div>
+        <h5>3. Trả về kết quả result.</h5>
+      </div>
+    </section>
+
+    <section class="MinhHoa">
+      <h3>Ví dụ minh họa: 66 <span>11</span> mod 221</h3>
+      <div>
+        <h4><span>Bước 1: </span>Khởi tạo</h4>
+        <p>result = 1</p>
+        <p>base = 3 mod 7 = 3</p>
+        <p>k = 13</p>
+      </div>
+      <div>
+        <h4>Bước 2: Lặp lại</h4>
+        <p>k = 13: lẻ -> result = (1 × 3) mod 7 = 3, base = (3 × 3) mod 7 = 2, k = 13 / 2 = 6</p>
+        <p>k = 6 chẵn -> result không đổi, base = (2 × 2) mod 7 = 4, k = 6 / 2 = 3</p>
+        <p>k = 3 lẻ -> result = (3 × 4) mod 7 = 5, base = (4 × 4) mod 7 = 2, k = 3 / 2 = 1</p>
+        <p>k = 1 lẻ -> result = (5 × 2) mod 7 = 3, base = (2 × 2) mod 7 = 4, k = 1 / 2 = 0</p>
+      </div>
+      <h4>Kết quả: 3<span>13 </span> mod 7 = 3</h4>
+    </section>
+
+    <section class="ThucHien">
+      <h1>Thuật Toán Tính a^k mod n</h1>
+      <div class="algorithm">
+          <label for="a">Nhập giá trị a:</label>
+          <input type="number" id="a" required>
+          <br>
+          <label for="k">Nhập giá trị k:</label>
+          <input type="number" id="k" required>
+          <br>
+          <label for="n">Nhập giá trị n:</label>
+          <input type="number" id="n" required>
+          <br>
+          <button onclick="calculate()">Tính</button>
+          
+          <table id="resultTable">
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>0</th>
+                      <th>1</th>
+                      <th>2</th>
+                      <th>...</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr id="binaryRow">
+                      <th>k<sub>i</sub></th>
+                  </tr>
+                  <tr id="aRow">
+                      <th>A</th>
+                  </tr>
+                  <tr id="bRow">
+                      <th>B</th>
+                  </tr>
+              </tbody>
+          </table>
+          <div class="result" id="finalResult"></div>
+      </div>
+    </section>
+
+      <script>
+          function calculate() {
+              const a = parseInt(document.getElementById('a').value);
+              const k = parseInt(document.getElementById('k').value);
+              const n = parseInt(document.getElementById('n').value);
+
+              if (isNaN(a) || isNaN(k) || isNaN(n)) {
+                  alert("Vui lòng nhập đầy đủ giá trị!");
+                  return;
+              }
+
+              const binaryK = k.toString(2).split('').reverse(); // Biểu diễn nhị phân (đảo ngược để duyệt từ bit thấp)
+              const binaryRow = document.getElementById('binaryRow');
+              const aRow = document.getElementById('aRow');
+              const bRow = document.getElementById('bRow');
+
+              binaryRow.innerHTML = '<th>k<sub>i</sub></th>';
+              aRow.innerHTML = '<th>A</th>';
+              bRow.innerHTML = '<th>B</th>';
+
+              let b = 1; // Khởi tạo b
+              let A = a % n; // Khởi tạo A (A = a mod n)
+
+              for (let i = 0; i < binaryK.length; i++) {
+                  const K_i = parseInt(binaryK[i]); // Lấy bit thứ i của k
+                  if (K_i === 1) {
+                      b = (b * A) % n; // Cập nhật b
+                  }
+                  A = (A * A) % n; // Cập nhật A = A^2 mod n
+
+                  // Thêm dữ liệu vào hàng tương ứng
+                  binaryRow.innerHTML += `<td>${K_i}</td>`;
+                  aRow.innerHTML += `<td>${A}</td>`;
+                  bRow.innerHTML += `<td>${b}</td>`;
+              }
+
+              document.getElementById('finalResult').innerText = `Kết quả: ${b}`;
+          }
+      </script>
+    </main>
+    <footer>
+      <h3>Nguồn tham khảo</h3>
+      <div>
+        <h4>Sách</h4>
+        <a href="">"Introduction to Algorithms" của Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest (chương liên quan đến lũy thừa nhanh và modular arithmetic).</a>
+        <a href="">"Cryptography and Network Security" của William Stallings (chương RSA).</a>
+      </div>
+      <div>
+        <h4>Trang web</h4>
+        <div>
+          <p>Khan Academy</p>
+          <a href="https://www.khanacademy.org/" target="_blank">Lũy thừa mô-đun</a>
+        </div>
+        <div>
+          <p>Wikipedia</p>
+          <a href="https://en.wikipedia.org/wiki/Modular_exponentiation">Modular Exponentiation</a>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
