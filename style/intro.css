@@ -1,0 +1,173 @@
+.t{
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 1px #f8f5f5;
+  height: 450px;
+}
+
+.t1{
+  color: #636464;
+  text-align: left;
+  margin: 30px 90px;
+}
+
+.tong{
+  margin: 0 100px 200px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.GioiThieu{
+  width: 560px;
+  box-shadow:0 3px 20px #d6dbde;
+  padding: 35px 20px;
+  border-radius: 20px;
+  line-height: 22px;
+}
+
+.GioiThieu h1, p{
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.ab{
+  z-index: 10;
+}
+
+/* Ứng dụng */
+.ud{
+  padding: 120px 0;
+  border-bottom: solid 1px #f8f5f5;
+}
+
+.i1{
+  width: 50px;
+  height: auto;
+  padding: 13px;
+}
+
+.i2{
+  width: 110px;
+  height: auto;
+}
+
+.i3{
+  width: 17px;
+  height: 17px;
+}
+
+.i5{
+  width: 75px;
+  height: auto;
+}
+
+.t1a a{
+  display: flex;
+  font-size: 12px;
+  text-decoration: none;
+  gap: 10px;
+  color: #0284FE;
+}
+
+.t1a{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 130px;
+  padding: 25px 35px;
+  border-radius: 10px;
+}
+
+.da{
+  display: flex;
+  gap: 10px;
+}
+
+.db{
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+.dba{
+  margin: 7px 0;
+}
+
+.d1{
+  width: 35px;
+  height: 35px;
+}
+
+.d h4{
+  color: #000;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Hoạt động */
+.yt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  border: solid 1px #b5e2e2;
+  padding: 15px 25px;
+  margin: 0 20% 3%;
+  border-radius: 20px;
+}
+
+.cba{
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.cb{
+  border: solid #d8f6f6 1px;
+  border-radius: 10px;
+  box-shadow:0 5px 20px #d8f6f6;
+}
+
+.cb h5{
+  padding: 10px 12px 18px;
+  font-size: 18px;
+  color: #0e5555;
+  border-bottom: #d8f6f6 1px solid;
+  margin: 9px 0;
+}
+
+.cb p{
+  padding: 0 15px;
+}
+
+/* Minh họa */
+.MinhHoa{
+  margin-top: 100px;
+}
+
+.m1 p{
+  font-size: 13px;
+}
+
+.m1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.tm{
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  border: solid #ebf5fa 1px;
+  box-shadow:0 2px 20px #ebf5fa;
+  border-radius: 12px;
+}
+
+.t2{
+  margin-left: 50px;
+  color: #595b5c;
+}

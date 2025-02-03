@@ -1,0 +1,63 @@
+body {
+  font-family: Roboto;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.ThucHien{
+  border-top: solid #ebf5fa 1px;
+  margin-top: 100px;
+  padding-top: 100px;
+}
+
+.algorithm {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background-color: #f2f2f2;
+}
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.al{
+  display: flex;
+  gap: 32px;
+}
+
+.al input{
+  width: 48px;
+}
+
+.b0{
+  padding: 5px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(9, 134, 92);
+  color: white;
+  transition: all 0.7s;
+  cursor: pointer;
+}
+
+.b0:hover{
+  opacity: 0.7;
+}
